@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000
 // console.log(process.env.PORT)
 // console.log(port)
 
-app.listen(port, () => {
+// Listening for the server changes as you change 
+app.listen(port, (req,res) => {
     console.log(`Server running on port ${port}`)
 })

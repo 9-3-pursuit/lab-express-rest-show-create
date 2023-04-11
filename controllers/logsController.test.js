@@ -1,7 +1,7 @@
 const request = require("supertest"); //backend dependency
 
 const logs = require("../app.js");
-let logsArray = require("../models/log.js");
+ let logsArray = require("../models/log.js");
 
 describe("logs", () => {
   let originalLogsArray = logsArray;
