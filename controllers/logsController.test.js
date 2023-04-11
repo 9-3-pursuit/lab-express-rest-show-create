@@ -1,4 +1,4 @@
-const request = require("supertest");
+const request = require("supertest"); //backend dependency
 
 const logs = require("../app.js");
 let logsArray = require("../models/log.js");
