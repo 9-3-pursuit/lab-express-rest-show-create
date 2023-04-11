@@ -48,4 +48,25 @@ module.exports = [
       mistakesWereMadeToday: true,
       daysSinceLastCrisis: 0,
     },
+    {
+        captainName: "Sarah Lance",
+        title: "Hannibal Smith",
+        post: "I love it when a plan comes together!",
+        mistakesWereMadeToday: true,
+        daysSinceLastCrisis: 25,
+    },
+    {
+        captainName: "Ahab",
+        title: "Borg",
+        post: "Resistance is futile!",
+        mistakesWereMadeToday: true,
+        daysSinceLastCrisis: 93,    
+    }, 
+    {
+        captainName: "Picard",
+        title: "Fox Mulder",
+        post: "The truth is out there.",
+        mistakesWereMadeToday: false,
+        daysSinceLastCrisis: 33,
+    }
   ];
