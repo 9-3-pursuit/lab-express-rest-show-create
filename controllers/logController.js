@@ -23,4 +23,15 @@ logs.post("/", (req, res) => {
   res.json(logsArray[logsArray.length - 1]);
 });
 
+// DELETE
+
+logs.delete("/:arrayIndex", (req, res) => {
+    if(logsArray[req.params.arrayIndex]) {
+        const deletedLogs = logsArray.splice(req.params.arrayIndex, 1)
+        res.status(200).json(deletedLogs);
+    } else {
+        res.status(404).json({error : "Not Found"})
+    }
+})
+
 module.exports = logs;
