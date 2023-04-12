@@ -4,6 +4,7 @@ const logsController = require("./controllers/logsController.js");
 
 // CONFIGURATION
 const app = express();
+app.use(express.json());
 
 // ROUTES
 app.get("/", (req, res) => {
@@ -13,7 +14,7 @@ app.get("/", (req, res) => {
 app.use("/logs", logsController);
 
 app.get("*", (req,res) => {
-    res.status(404).json({"error" : "Page Not Found"})
+    res.status(404).json({error : "Page Not Found"})
 })
 
 // EXPORT
