@@ -16,4 +16,11 @@ logs.get("/:arrayIndex", (req, res) => {
   }
 });
 
+// CREATE
+
+logs.post("/", (req, res) => {
+  logsArray.push(req.body);
+  res.json(logsArray[logsArray.length - 1]);
+});
+
 module.exports = logs;
