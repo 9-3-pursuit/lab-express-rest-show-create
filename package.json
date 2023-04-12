@@ -1,7 +1,7 @@
 {
   "name": "captains-log",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://cdn.shopify.com/s/files/1/2256/1635/products/4520_c-01.jpg?v=1510506828)",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -19,5 +19,13 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vandhana-Mohan/lab-express-rest-show-create.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vandhana-Mohan/lab-express-rest-show-create/issues"
+  },
+  "homepage": "https://github.com/Vandhana-Mohan/lab-express-rest-show-create#readme"
 }
