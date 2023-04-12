@@ -7,7 +7,9 @@ logs.get("/", (req, res) => {
   res.json(logsArray);
 });
 
-//  GET ✓ sends the corresponding log when a valid index is given --v
+//  GET --v
+// ✓ sends the corresponding log when a valid index is given 
+// ✓ sends a redirect when an invalid index is given
 logs.get("/:index", (req, res) => {
   const { index } = req.params;
   
@@ -26,6 +28,22 @@ logs.post("/", (req, res) => {
   logsArray.push(req.body);
   res.send(logsArray);
 });
+
+// DELETE ✓ deletes at the index in the logs array --v
+
+logs.delete("/:index", (req, res) => {
+    const { index } = req.params;
+    if (logsArray[index]) {
+      const deletedLogs = logsArray.splice(index, 1); // returns deleted logs
+      res.status(200).json(logsArray);
+    } else {
+      res.status(404).json({ error: "Not Found" });
+    }
+  });
+
+
+
+
 
 
 

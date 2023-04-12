@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-app.use(express.json());
+app.use(express.json()); // ! very importtant, POST doe not work w/o it 
 const logsController = require("./controllers/logsController");
 
 // Mount the logs controller
