@@ -1,6 +1,8 @@
 const express = require("express");
+const log = require("../models/log");
 const logs = express.Router();
 const logsArray = require("../models/log");
+const logValidator  = require("../models/validators");
 
 // INDEX all logs
 logs.get("/", (req, res) => {
@@ -8,7 +10,7 @@ logs.get("/", (req, res) => {
 });
 
 // CREATE - add a new log
-logs.post("/", (req, res) => {
+logs.post("/", logValidator, (req, res) => {
 
     logsArray.push(req.body);
     res.status(201).json(logsArray[logsArray.length - 1]);
@@ -24,11 +26,26 @@ logs.get("/:index", (req, res) => {
     }
 });
 
+// UPDATE
+logs.put("/:index", logValidator, (req, res) => {
+    const { index } = req.params;
+    if (logsArray[index]) {
+        logsArray[index] = req.body;
+        res.status(200).json(logsArray[index]);
+    } else {
+        res.status(404).json({error: "Not Found"});
+    }
+});
+
 // DELETE - delete one log
 logs.delete("/:index", (req, res) => {
     const { index } = req.params
-    const deletedLog = logsArray.splice(index, 1);
-    res.status(200).json(deletedLog);
+    if (logsArray[index]) {
+        const deletedLog = logsArray.splice(index, 1);
+        res.status(200).json(deletedLog);
+    } else {
+        res.status(404).json({error: "Not Found"});
+    }
 });
 
 module.exports = logs;
