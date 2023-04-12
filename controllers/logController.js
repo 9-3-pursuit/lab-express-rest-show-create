@@ -12,7 +12,8 @@ logs.get("/:arrayIndex", (req, res) => {
   if (logsArray[req.params.arrayIndex]) {
     res.json(logsArray[req.params.arrayIndex]);
   } else {
-    res.status(404).json({ error: "Not Found" });
+    // res.status(404).json({ error: "Not Found" });
+    res.redirect("/logs")
   }
 });
 
