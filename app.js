@@ -1,8 +1,7 @@
 const express = require("express");
-const logsArray = require("./models/log");
 const logsController = require("./controllers/logsController")
 const app = express();
-
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("welcome to the captain's log");
