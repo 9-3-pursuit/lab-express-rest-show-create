@@ -14,6 +14,12 @@ logs.get("/:id", (req, res) => {
       res.redirect("/*");
     }
   });
+  // CREATE
+logs.post("/", (req, res) => {
+    logsArray.push(req.body);
+    res.json(logsArray[logsArray.length - 1]);
+  });
+  
   
 
 
