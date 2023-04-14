@@ -33,6 +33,28 @@ logs.delete('/:index', (req, res) => {
   }
 })
 
+//update/put/patch for one log in bookmarksArray
+logs.put('/:index', (req, res) => {
+  const { index } = req.params;
+  if(ctrlController[index]) {
+    ctrlController[index] = req.body;
+    res.status(200).json({ status: 200, message: "resource updated" });
+  } else {
+    res.redirect("/404")
+  }
+})
+//another update/patch/put for one log in bookmarksArray
+logs.put('/:index', (req, res) => {
+  const { index } = req.params;
+  if(ctrlController[index]) {
+    ctrlController.splice(index, 0, req.body);
+    res.status(200).json({ status: 200, message: "resource updated" });
+  } else {
+    res.redirect("/404")
+  }
+})
+
+
 
 module.exports = logs;
 
