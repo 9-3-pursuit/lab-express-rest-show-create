@@ -10,7 +10,7 @@ const app = express();
 app.get("/",(req,res)=> {
     res.send("Hello Welcome")
 })
-
+app.use(cors());
 app.use(express.json())
 
 // "/logs" is equal to http://localhost:3333/logs
