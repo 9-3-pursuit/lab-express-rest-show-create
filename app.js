@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const logRouter = require("./controllers/logs.controller");
 app.use(express.json());
+app.use(cors());
 app.use("/logs", logRouter);
 
 app.get("/", (req, res) => {
