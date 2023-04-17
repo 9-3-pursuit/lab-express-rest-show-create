@@ -11,7 +11,11 @@ const rootHandler = (req, res) => {
 const logIndexHandler = (req, res) => {
   const { index } = req.params;
 
-  logData[index] ? res.status(200).send(logData[index]) : res.status(404).redirect("/error");
+  if (logData[index]) {
+    res.status(200).send(logData[index]);
+  } else {
+    res.status(404).redirect("/error");
+  }
 };
 
 // POST: ROUTE HANDLERS
