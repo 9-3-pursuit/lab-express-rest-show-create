@@ -28,7 +28,7 @@ logsController.post('/', (req, res) => {
   logsController.put('/:index', (req, res) => {
     const { index } = req.params;
     if(logsArray[index]) {
-      logsArray.splice(index, 0, req.body);
+      logsArray[index] = req.body ;
       res.status(200).json({ status: 200, message: "resource updated" });
     } else {
       res.redirect("/404")

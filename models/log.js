@@ -1,13 +1,13 @@
 module.exports = [
     {
-      captainName: "Florence",
+      captainName: "Picard",
       title: "Courage",
       post: "Courage can be an emotion too.",
-      mistakesWereMadeToday: true,
+      mistakesWereMadeToday: false,
       daysSinceLastCrisis: 100,
     },
     {
-      captainName: "Fernando",
+      captainName: "Ahab",
       title: "Whale",
       post: "By heavens man, we are turned round and round in this world, like yonder windlass, and fate is the handspike.",
       mistakesWereMadeToday: true,
