@@ -1,11 +1,13 @@
 // DEPENDENCIES
 const express = require("express");
+const cors = require("cors");
 const logController = require("./controllers/logController");
 
 // CONFIGURATION
 const app = express();
 
 // MIDDLEWARE
+app.use(cors()); // enable CORS
 app.use(express.json()); // parse incoming JSON data
 app.use("/logs", logController); // mount logController at /logs
 
