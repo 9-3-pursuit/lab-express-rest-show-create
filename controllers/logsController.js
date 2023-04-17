@@ -37,7 +37,7 @@ logs.delete('/:index', (req, res) => {
 logs.put('/:index', (req, res) => {
     const { index } = req.params;
     if (logsControllerArr[index]) {
-      logsControllerArr.splice(index, 0, req.body);
+      logsControllerArr[index] = req.body;
       res.status(200).json({ status: 200, message: "resource updated" });
     } else {
       res.redirect("/404")
