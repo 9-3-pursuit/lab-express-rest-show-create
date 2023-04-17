@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 const logData = require("../models/log");
+const { validateData } = require("../validations/validation.js");
 const logs = express.Router();
 
 // GET: ROUTE HANDLERS
@@ -22,7 +23,7 @@ const logIndexHandler = (req, res) => {
 const createLogHandler = (req, res) => {
   const log = req.body;
   logData.push(log);
-  res.status(201).send(logData[logData.length - 1]);
+  res.status(200).send(logData[logData.length - 1]);
 };
 
 // DELETE: ROUTE HANDLERS
