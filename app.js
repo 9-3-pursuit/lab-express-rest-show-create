@@ -5,8 +5,9 @@ const logController = require("./controllers/logController");
 // CONFIGURATION
 const app = express();
 
-app.use(express.json());
-app.use("/logs", logController);
+// MIDDLEWARE
+app.use(express.json()); // parse incoming JSON data
+app.use("/logs", logController); // mount logController at /logs
 
 // ROUTE HANDLERS
 const rootHandler = (req, res) => {
