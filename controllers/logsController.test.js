@@ -1,4 +1,6 @@
 const request = require("supertest");
+const app = require('../app');
+
 
 const logs = require("../app.js");
 let logsArray = require("../models/log.js");
