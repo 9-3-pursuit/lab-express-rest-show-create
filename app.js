@@ -3,11 +3,11 @@ const express = require('express');
 
 // CONFIGURATION
 const app = express();
+const cors = require('express');
 
-// const logsArray = require("./models/log.js");
 const logsControllerArr = require('./controllers/logsController.js');
 
-app.use(express.json()); // for parsing app / json
+app.use(express.json()); 
 
 
 app.use((req, res, next) => {
